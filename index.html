@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Kanjula Vigneswara Reddy | Academic & Technical Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111827',
+                            950: '#060913',
+                        },
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        accent: {
+                            purple: '#8b5cf6',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e',
+                            cyan: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #060913;
+            color: #f1f5f9;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-interactive:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.45);
+            box-shadow: 0 16px 35px -10px rgba(79, 70, 229, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 40%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(6, 9, 19, 0.8);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.4);
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.7);
+        }
+
+        /* Print / PDF Styling */
+        @media print {
+            header, footer, #toast, .no-print, button:not(.print-keep) {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 11pt;
+            }
+            .glass-card {
+                background: white !important;
+                border: 1px solid #ddd !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            .text-white, .text-slate-200, .text-slate-300, .text-slate-400 {
+                color: black !important;
+            }
+            .gradient-text {
+                -webkit-text-fill-color: black !important;
+                background: none !important;
+                font-weight: bold;
+            }
+            .tab-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white custom-scrollbar">
+
+    <!-- Toast Notification for Copy Operations -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl border border-emerald-400/30 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+    </div>
+
+    <!-- Sticky Glass Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl gradient-bg-1 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    KV
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg text-white tracking-tight group-hover:text-indigo-400 transition-colors">Dr. K. V. Reddy</span>
+                    <span class="block text-xs text-indigo-300/80 font-mono">SNIST • CSE & IT</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-1 font-medium text-sm text-slate-300">
+                <a href="#leadership" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Leadership</a>
+                <a href="#experience" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Experience</a>
+                <a href="#skills" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Skills</a>
+                <a href="#innovations" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Patent & Books</a>
+                <a href="#research" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Publications</a>
+                <a href="#activities" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/70 transition-colors">Outreach</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="window.print()" title="Print CV / Export PDF" class="no-print px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 border border-slate-700 transition-colors">
+                    <i class="fa-solid fa-print text-indigo-400"></i> Print CV
+                </button>
+                <a href="#contact" class="px-4 py-2 rounded-xl gradient-bg-1 text-white font-semibold text-xs shadow-md shadow-indigo-500/25 hover:opacity-95 transition-opacity">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2.5 text-slate-300 hover:text-white focus:outline-none rounded-lg bg-slate-800/60 border border-slate-700">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Responsive Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2 text-slate-200">
+            <a href="#leadership" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Institutional Leadership</a>
+            <a href="#experience" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Experience & Qualifications</a>
+            <a href="#skills" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Technical Skills & Courses</a>
+            <a href="#innovations" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Patent, Books & Book Chapters</a>
+            <a href="#research" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Research Publications</a>
+            <a href="#activities" class="mobile-link block px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm">Conferences, FDPs & Workshops</a>
+            <div class="pt-2 flex items-center gap-2">
+                <button onclick="window.print()" class="w-full py-2.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 border border-slate-700">
+                    <i class="fa-solid fa-print"></i> Print CV
+                </button>
+                <a href="#contact" class="w-full mobile-link py-2.5 rounded-xl gradient-bg-1 text-center font-semibold text-xs text-white">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-24 space-y-20 sm:space-y-28">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative pt-6 pb-12 overflow-hidden">
+            <!-- Background Radial Glow Effects -->
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/15 rounded-full filter blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/15 rounded-full filter blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Text Details (8 cols) -->
+                    <div class="lg:col-span-8 space-y-6">
+                        
+                        <!-- Badges Bar -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                                <i class="fa-solid fa-graduation-cap"></i> Ph.D. in CSE (2026)
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <i class="fa-solid fa-briefcase"></i> Head of Training & Assoc. Professor
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                <i class="fa-solid fa-building-columns"></i> SNIST Department of IT
+                            </span>
+                        </div>
+
+                        <!-- Name & Headline -->
+                        <div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                                Dr. Kanjula Vigneswara <span class="gradient-text">Reddy</span>
+                            </h1>
+                            <p class="mt-3 text-lg sm:text-xl text-slate-300 font-medium">
+                                Associate Professor & Associate Head (Department of Information Technology) & Head of Training, SNIST
+                            </p>
+                        </div>
+
+                        <!-- Polished Objective -->
+                        <p class="text-slate-400 leading-relaxed max-w-3xl text-sm sm:text-base">
+                            Dedicated academician and researcher with over <strong class="text-white font-semibold">14 years of experience</strong> in Computer Science and Information Technology. Committed to fostering innovation, advancing applied AI and Cloud Computing research, and empowering students through industry-aligned technical training.
+                        </p>
+
+                        <!-- Academic Identifiers Badge Bar -->
+                        <div class="pt-2 flex flex-wrap gap-2.5">
+                            <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="glass-card hover:bg-slate-800 text-slate-200 px-3.5 py-2 rounded-xl text-xs font-medium flex items-center gap-2 border border-slate-700/70 transition-all hover:border-indigo-500/50">
+                                <i class="fa-solid fa-book-bookmark text-indigo-400"></i>
+                                <span>Scopus ID: <strong class="text-white">58626857500</strong></span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                            </a>
+
+                            <a href="https://orcid.org/0000-0001-9961-0834" target="_blank" rel="noopener noreferrer" class="glass-card hover:bg-slate-800 text-slate-200 px-3.5 py-2 rounded-xl text-xs font-medium flex items-center gap-2 border border-slate-700/70 transition-all hover:border-emerald-500/50">
+                                <i class="fa-brands fa-orcid text-emerald-400"></i>
+                                <span>ORCID: <strong class="text-white">0000-0001-9961-0834</strong></span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2.5 text-xs font-mono text-slate-400">
+                            <span class="bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800">JNTUH ID: 7241-150427-153651</span>
+                            <span class="bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800">AICTE ID: 1-2628776425</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-3 flex flex-wrap items-center gap-3">
+                            <a href="#contact" class="gradient-bg-1 hover:opacity-95 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-500/25 flex items-center gap-2 transition-all text-sm">
+                                <i class="fa-solid fa-paper-plane"></i> Get In Touch
+                            </a>
+                            <button onclick="copyToClipboard('vignesh2friend@gmail.com', 'Email address copied!')" class="glass-card hover:bg-slate-800 text-slate-200 font-medium px-4 py-3 rounded-xl flex items-center gap-2 transition-colors border border-slate-700 text-sm">
+                                <i class="fa-solid fa-copy text-indigo-400"></i> Copy Email
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Profile Graphic Card (4 cols) -->
+                    <div class="lg:col-span-4">
+                        <div class="glass-card p-6 rounded-3xl border border-slate-700/80 text-center relative group">
+                            <div class="absolute -inset-0.5 gradient-bg-1 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                            <div class="relative bg-slate-950 rounded-2xl p-4 space-y-4">
+                                <div class="w-40 h-40 sm:w-44 sm:h-44 mx-auto rounded-2xl gradient-bg-1 p-1 shadow-2xl">
+                                    <div class="w-full h-full bg-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center p-4 text-center">
+                                        <div class="w-20 h-20 rounded-full gradient-bg-1 flex items-center justify-center text-3xl font-extrabold text-white shadow-xl mb-2 font-display">
+                                            VK
+                                        </div>
+                                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-300">Dr. K. V. Reddy</span>
+                                        <span class="text-[10px] text-slate-400 font-mono mt-0.5">Ph.D. Computer Science</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-base font-bold text-white">Academic Leadership</h3>
+                                    <p class="text-xs text-indigo-300">SNIST Hyderabad, Telangana</p>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 text-left pt-2 border-t border-slate-800 text-xs">
+                                    <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                                        <span class="block text-slate-400 font-medium text-[11px]">Experience</span>
+                                        <span class="font-bold text-white text-sm">14+ Years</span>
+                                    </div>
+                                    <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                                        <span class="block text-slate-400 font-medium text-[11px]">Papers</span>
+                                        <span class="font-bold text-emerald-400 text-sm">12 Published</span>
+                                    </div>
+                                    <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                                        <span class="block text-slate-400 font-medium text-[11px]">Patents</span>
+                                        <span class="font-bold text-amber-400 text-sm">1 Applied</span>
+                                    </div>
+                                    <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                                        <span class="block text-slate-400 font-medium text-[11px]">Books/Chapters</span>
+                                        <span class="font-bold text-purple-400 text-sm">2 Published</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-1 flex justify-center gap-3 text-slate-400">
+                                    <button onclick="copyToClipboard('+918790270702', 'Mobile number copied!')" title="Copy Mobile" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors">
+                                        <i class="fa-solid fa-phone text-xs"></i>
+                                    </button>
+                                    <a href="mailto:vignesh2friend@gmail.com" title="Send Email" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors">
+                                        <i class="fa-solid fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="https://github.com/KVigneswaraReddy" target="_blank" rel="noopener noreferrer" title="GitHub Profile (Opens in new tab)" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors">
+                                        <i class="fa-brands fa-github text-sm"></i>
+                                    </a>
+                                    <a href="#research" title="View Research" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-colors">
+                                        <i class="fa-solid fa-microscope text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTITUTIONAL LEADERSHIP & ADMINISTRATIVE ROLES -->
+        <section id="leadership" class="relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Governance & Contribution</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Administrative Roles & Institutional Leadership</h3>
+                    <p class="text-sm text-slate-400">Pioneering curriculum standards, lab infrastructure, and accreditation processes across institutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Role 1 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-user-gear text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">Head of Training (SNIST)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Appointed Head of Training (Aug 2026 – Present), steering technical skill initiatives, student placement readiness, and domain-specific training tracks.
+                        </p>
+                    </div>
+
+                    <!-- Role 2 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-user-tie text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">Associate Head of IT Department (SNIST)</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Serving as Associate Head of the Department of Information Technology (Aug 2026 – Present), assisting in departmental governance, academic planning, and faculty coordination.
+                        </p>
+                    </div>
+
+                    <!-- Role 3 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-book-open-reader text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">BOS Curriculum Coordinator</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Board of Studies (BOS) Coordinator responsible for designing and updating modern course curricula for the Department of Information Technology at SNIST.
+                        </p>
+                    </div>
+
+                    <!-- Role 4 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-award text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">NBA Department-Level Coordinator</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Lead Coordinator for NBA accreditation covering Criteria I (Curriculum) and Criteria IV (Placement Data and Student Pass Percentage).
+                        </p>
+                    </div>
+
+                    <!-- Role 5 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-building-circle-check text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">NAAC Department Coordinator</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Department-level coordinator ensuring institutional compliance and document alignment for NAAC Criteria I (Curriculum design & implementation).
+                        </p>
+                    </div>
+
+                    <!-- Role 6 -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-clipboard-check text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">JNTUH Fact-Finding Coordinator</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Coordinator for the JNTUH Fact-Finding Committee inspection concerning all Undergraduate (UG) and Postgraduate (PG) IT laboratories.
+                        </p>
+                    </div>
+
+                    <!-- Role 7 (Centered in the middle column on desktop) -->
+                    <div class="glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-3 lg:col-start-2">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-desktop text-lg"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">Lab & Asset Management In-Charge</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Managed IT Computer Laboratories and served as Department Asset Management Coordinator (Lab In-Charge from 2017 to June 2021).
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE & ACADEMIC CREDENTIALS -->
+        <section id="experience" class="relative py-12 bg-slate-950/60 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Career Timeline</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience & Academic Qualifications</h3>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    
+                    <!-- EXPERIENCE COLUMN -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                            <div class="w-8 h-8 rounded-lg gradient-bg-1 flex items-center justify-center text-white text-sm">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Employment History</h4>
+                        </div>
+
+                        <div class="relative border-l-2 border-indigo-500/30 ml-3 pl-6 space-y-8">
+                            
+                            <!-- Job 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full gradient-bg-1 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1.5">
+                                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Aug 2026 – Present</span>
+                                    <h5 class="text-lg font-bold text-white">Head of Training & Associate Head of IT Department, Associate Professor</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Department of Information Technology, Sreenidhi Institute of Science and Technology (SNIST), Hyderabad</p>
+                                    <p class="text-xs text-slate-400 pt-1">Promoted to Associate Professor and appointed Associate Head of IT Department, Head of Training for student skill transformation.</p>
+                                </div>
+                            </div>
+
+                            <!-- Job 2 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1.5">
+                                    <span class="text-xs font-semibold text-slate-400">Sep 2022 – Jul 2026</span>
+                                    <h5 class="text-lg font-bold text-white">Assistant Professor</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Department of Information Technology, Sreenidhi Institute of Science and Technology (SNIST), Hyderabad</p>
+                                    <p class="text-xs text-slate-400 pt-1">Engaged in undergraduate teaching, accreditation leadership, research, and lab coordination.</p>
+                                </div>
+                            </div>
+
+                            <!-- Job 3 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1.5">
+                                    <span class="text-xs font-semibold text-slate-400">Jan 2022 – Sep 2022</span>
+                                    <h5 class="text-lg font-bold text-white">Assistant Professor</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Department of Information Technology, C.V.R. College of Engineering & Technology, Hyderabad</p>
+                                    <p class="text-xs text-slate-400 pt-1">Taught core IT courses and mentored student projects.</p>
+                                </div>
+                            </div>
+
+                            <!-- Job 4 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1.5">
+                                    <span class="text-xs font-semibold text-slate-400">Apr 2015 – Jun 2021</span>
+                                    <h5 class="text-lg font-bold text-white">Assistant Professor</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Department of Information Technology, Sreenidhi Institute of Science and Technology (SNIST), Ghatkesar</p>
+                                    <p class="text-xs text-slate-400 pt-1">Managed IT department computer labs and delivered core CS/IT curriculum.</p>
+                                </div>
+                            </div>
+
+                            <!-- Job 5 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1.5">
+                                    <span class="text-xs font-semibold text-slate-400">Jun 2010 – Jun 2011 & Apr 2014 – Apr 2015</span>
+                                    <h5 class="text-lg font-bold text-white">Assistant Professor</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Department of Computer Science & Engineering, Khader Memorial College of Engineering & Technology, Nalgonda Dist.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- QUALIFICATIONS COLUMN -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                            <div class="w-8 h-8 rounded-lg gradient-bg-2 flex items-center justify-center text-white text-sm">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Academic Credentials</h4>
+                        </div>
+
+                        <div class="relative border-l-2 border-cyan-500/30 ml-3 pl-6 space-y-8">
+                            
+                            <!-- Degree 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full gradient-bg-2 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                                    <div class="flex justify-between items-start">
+                                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Completed 2026</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Doctorate Degree</span>
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">Ph.D. in Computer Science & Engineering</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Annamalai University</p>
+                                    <p class="text-xs text-slate-400">Specialized research focusing on Neural Networks, Machine Learning, and Automated Agricultural Image Classification.</p>
+                                </div>
+                            </div>
+
+                            <!-- Degree 2 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                                    <div class="flex justify-between items-start">
+                                        <span class="text-xs font-semibold text-slate-400">2014</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">83.25% Marks</span>
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">M.Tech in Software Engineering</h5>
+                                    <p class="text-xs text-slate-300 font-medium">JNTUH (Jawaharlal Nehru Technological University Hyderabad)</p>
+                                    <p class="text-xs text-slate-400">Graduated with Distinction in advanced software engineering practices and architecture.</p>
+                                </div>
+                            </div>
+
+                            <!-- Degree 3 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                                    <div class="flex justify-between items-start">
+                                        <span class="text-xs font-semibold text-slate-400">2010</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">74.20% Marks</span>
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">B.Tech in Information Technology</h5>
+                                    <p class="text-xs text-slate-300 font-medium">JNTUH Hyderabad</p>
+                                    <p class="text-xs text-slate-400">Comprehensive foundation in core computer science, systems design, and programming languages.</p>
+                                </div>
+                            </div>
+
+                            <!-- Degree 4 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                                    <div class="flex justify-between items-start">
+                                        <span class="text-xs font-semibold text-slate-400">2006</span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">89.4% Marks</span>
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">Intermediate (MPC)</h5>
+                                    <p class="text-xs text-slate-300 font-medium">Board of Intermediate Education, Andhra Pradesh (BIE, A.P.)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS, SUBJECTS TAUGHT & CERTIFICATIONS -->
+        <section id="skills" class="relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Skillset & Pedagogy</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Technical Expertise, Subjects & Certifications</h3>
+                </div>
+
+                <!-- Skill Categories Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Languages -->
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white">Programming</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">C</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">C++</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Data Structures</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Java</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Android Studio</span>
+                        </div>
+                    </div>
+
+                    <!-- Web Dev -->
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white">Web & Full-Stack</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">HTML5</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">CSS3</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Bootstrap</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">AngularJS</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">React.js</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Node.js</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Express.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases & Cloud -->
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white">Database & Cloud</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Oracle 10i</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">SQL</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">MS Access</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">AWS Cloud</span>
+                        </div>
+                    </div>
+
+                    <!-- OS Platforms -->
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white">Operating Systems</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Ubuntu Linux</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-200 text-xs font-semibold border border-slate-800">Windows 10 / XP / 9x</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Subjects Handled Banner -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-chalkboard-user text-2xl text-indigo-400"></i>
+                        <h4 class="text-lg font-bold text-white">Core Academic Subjects Handled</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">C Programming</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Data Structures</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Operating Systems (OS)</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Java Programming</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Computer Networks</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Web Technologies</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Full-Stack JavaScript</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Compiler Design</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Cloud Computing</span>
+                        <span class="px-4 py-2 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">Machine Learning</span>
+                    </div>
+                </div>
+
+                <!-- Certifications Cards (Static without external hyperlink for Coursera) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">MHRD Sponsored • NPTEL</span>
+                            <h5 class="text-base font-bold text-white">Compiler Design (12-Week Course)</h5>
+                            <p class="text-xs text-slate-400">Completed in April 2019</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">Coursera Certification • HKUST</span>
+                            <h5 class="text-base font-bold text-white">Server-Side Development with NodeJS, Express & MongoDB</h5>
+                            <p class="text-xs text-slate-400">Completed Online Certification</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PATENT, PUBLISHED BOOKS & IEEE PAPERS -->
+        <section id="innovations" class="relative py-12 bg-slate-950/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Intellectual Property & Authored Works</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Patents, Published Books & Chapters</h3>
+                </div>
+
+                <!-- FEATURED HIGHLIGHTS GRID -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Design Patent Card -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-amber-500/30 relative overflow-hidden group hover:border-amber-500/60 transition-colors">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                                    <i class="fa-solid fa-lightbulb"></i> DESIGN PATENT APPLIED
+                                </span>
+                                <span class="text-xs font-mono text-slate-400">19/04/2022</span>
+                            </div>
+
+                            <h4 class="text-2xl font-extrabold text-white group-hover:text-amber-300 transition-colors">
+                                IoT-Based Organic Waste Composter
+                            </h4>
+
+                            <div class="space-y-1.5 text-xs text-slate-300 font-mono bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+                                <p><strong class="text-slate-400 font-sans">Application No:</strong> 362744-001</p>
+                                <p><strong class="text-slate-400 font-sans">CBR No:</strong> 200711</p>
+                                <p><strong class="text-slate-400 font-sans">Class:</strong> Packages and containers for the transport or handling of goods (Refuse & Trash Containers)</p>
+                                <p><strong class="text-slate-400 font-sans">Role:</strong> Co-Inventor</p>
+                            </div>
+
+                            <p class="text-xs text-slate-400 leading-relaxed pt-1">
+                                An IoT-enabled smart composting system designed for automated organic waste handling, real-time decomposition monitoring, and eco-friendly waste management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Book Published Card (Direct Flipkart Product URL) -->
+                    <a href="https://www.flipkart.com/product/p/itme?pid=9788169135122" target="_blank" rel="noopener noreferrer" class="block glass-card glass-card-interactive p-6 sm:p-8 rounded-3xl border border-purple-500/30 relative overflow-hidden group hover:border-purple-500/60 transition-colors">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl"></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                                    <i class="fa-solid fa-book"></i> PUBLISHED BOOK
+                                </span>
+                                <span class="text-xs font-semibold text-purple-300 flex items-center gap-1.5 group-hover:underline">
+                                    June 2026 • View on Flipkart <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+
+                            <h4 class="text-2xl font-extrabold text-white group-hover:text-purple-300 transition-colors">
+                                Augmented Reality and Virtual Reality
+                            </h4>
+
+                            <div class="space-y-1.5 text-xs text-slate-300 font-mono bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+                                <p><strong class="text-slate-400 font-sans">Publisher:</strong> Pundit Publications</p>
+                                <p><strong class="text-slate-400 font-sans">ISBN:</strong> 978-81-69135-12-2</p>
+                                <p><strong class="text-slate-400 font-sans">Role:</strong> Author</p>
+                            </div>
+
+                            <p class="text-xs text-slate-400 leading-relaxed pt-1">
+                                Academic textbook exploring immersive AR/VR system architectures, spatial graphics rendering, human-computer interaction, and modern industrial applications.
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- BOOK CHAPTERS & IEEE CONFERENCES (Direct Links) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="block glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-2 group">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">SCOPUS INDEXED BOOK CHAPTER</span>
+                            <span class="text-[11px] text-emerald-300 group-hover:underline flex items-center gap-1">
+                                View on Scopus <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                            </span>
+                        </div>
+                        <h5 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">Intelligent Methodologies to Measure Neighborhood Situations in Public Health: COVID-19</h5>
+                        <p class="text-xs text-slate-400">Published in <em>Social Determinants Trends in Cognitive Analysis of Healthcare Analysis Using Artificial Intelligence</em> (ISBN: 979-8-89113-774-5).</p>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Neural%20Style%20Transfer%20Using%20Machine%20Learning:%20A%20Comparative%20Study%20of%20Optimization%20and%20Feed-Forward%20Approaches" target="_blank" rel="noopener noreferrer" class="block glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 space-y-2 group">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">IEEE ELECTRONIC PUBLICATION (2026)</span>
+                            <span class="text-[11px] text-indigo-300 group-hover:underline flex items-center gap-1">
+                                View on IEEE Xplore <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                            </span>
+                        </div>
+                        <h5 class="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">Neural Style Transfer Using Machine Learning: A Comparative Study of Optimization and Feed-Forward Approaches</h5>
+                        <p class="text-xs text-slate-400">6th International Conference on Advancement in Electronics & Communication Engineering (AECE 2026). Paper ID: AECE2026-411.</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESEARCH PUBLICATIONS SEARCH & FILTER HUB -->
+        <section id="research" class="relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Scholarly Contributions</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Research Papers & Conference Proceedings</h3>
+                    <p class="text-sm text-slate-400">Click any publication card to view the indexed record or journal listing in a new tab.</p>
+                </div>
+
+                <!-- Search & Filter Control Bar -->
+                <div class="glass-card p-4 sm:p-6 rounded-3xl border border-slate-800 space-y-4">
+                    <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+                        
+                        <!-- Search Box -->
+                        <div class="relative flex-1">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
+                            <input type="text" id="paper-search" placeholder="Search by paper title, journal, algorithm, or year..." class="w-full bg-slate-950 border border-slate-800 text-sm text-slate-200 pl-11 pr-4 py-3 rounded-2xl focus:outline-none focus:border-indigo-500 transition-colors">
+                        </div>
+
+                        <!-- Category Filter Buttons -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button id="filter-all" onclick="filterPapers('all')" class="paper-filter-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-md transition-all">
+                                All (<span id="count-all">12</span>)
+                            </button>
+                            <button id="filter-scopus" onclick="filterPapers('scopus')" class="paper-filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 hover:text-white border border-slate-800 transition-all">
+                                Scopus Indexed (<span id="count-scopus">6</span>)
+                            </button>
+                            <button id="filter-journal" onclick="filterPapers('journal')" class="paper-filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 hover:text-white border border-slate-800 transition-all">
+                                Journals (<span id="count-journal">9</span>)
+                            </button>
+                            <button id="filter-conference" onclick="filterPapers('conference')" class="paper-filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 hover:text-white border border-slate-800 transition-all">
+                                Conferences (<span id="count-conference">3</span>)
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Papers Grid -->
+                <div id="papers-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <!-- Paper 1 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="journal" data-keywords="mango disease convolutional recurrent neural network crnn metaheuristic optimizer ijisae 2023 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    Dec 2023 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">Detection and Classification of Disease from Mango Fruit Using Convolutional Recurrent Neural Network with Metaheuristic Optimizer</h5>
+                            <p class="text-xs text-slate-400">International Journal of Intelligent Systems and Applications in Engineering (IJISAE), Vol. 12, No. 9s.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 2 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="journal" data-keywords="xaco_1dcnn ant colony optimization 1d cnn fruit grading classification ijisae 2023 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    Aug 2023 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">XACO_1DCNN: Ant Colony Optimization-Based 1D-Convolutional Neural Network for Fruit Grading and Classification</h5>
+                            <p class="text-xs text-slate-400">International Journal of Intelligent Systems and Applications in Engineering (IJISAE), Vol. 11, No. 10s.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 3 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="journal" data-keywords="comparative analysis fruit disease identification ijritcc 2023 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    June 2023 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">Comparative Analysis of Fruit Disease Identification Methods: A Comprehensive Study</h5>
+                            <p class="text-xs text-slate-400">International Journal on Recent and Innovation Trends in Computing and Communication (IJRITCC), Vol. 11, No. 7.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 4 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="conference" data-keywords="mango fruit disease detection pesticide icdsai csusb iaasse lendi 2023 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    2023 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">A Review of Mango Fruit Disease Detection and Pesticide Suggestions</h5>
+                            <p class="text-xs text-slate-400">International Conference ICDSAI 2023 (Jointly organized by CSUSB USA, IAASSE & Lendi Institute), pp. 577–587.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 5 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="conference" data-keywords="fruit identification classification machine learning icdsai csusb 2023 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    2023 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">Fruit Identification and Classification Using Machine Learning</h5>
+                            <p class="text-xs text-slate-400">International Conference ICDSAI 2023 (CSUSB USA, IAASSE & Lendi Institute), pp. 555–564.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 6 (Updated IJCRT URL) -->
+                    <a href="https://ijcrt.org/viewfull.php?&p_id=IJCRT2106147" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="journal" data-keywords="covid-19 detection chest x-ray cnn ijcrt 2021">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">IJCRT (ISSN: 2320-2882)</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    June 2021 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">COVID-19 Detection from Chest X-Ray Images Using CNN</h5>
+                            <p class="text-xs text-slate-400">International Journal of Creative Research Thoughts (IJCRT), Vol. 9, Issue 6.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 7 (Updated IJSDR URL) -->
+                    <a href="https://www.ijsdr.org/viewpaperforall.php?paper=IJSDR2004048" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="journal" data-keywords="currency recognition image processing ijsdr 2020">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">IJSDR (ISSN: 2455-2631)</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    April 2020 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">Currency Recognition Using Image Processing</h5>
+                            <p class="text-xs text-slate-400">International Journal of Scientific Development and Research (IJSDR), Vol. 5, Issue 4.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 8 (Purakala Journal Archive / ISSN Reference) -->
+                    <a href="https://abcdindex.com/Journal/purakala-print-only-0971-2143" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="journal" data-keywords="picture prediction cnn purakala 2020">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">Purakala Journal (ISSN: 0971-2143)</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    April 2020 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">Picture Prediction Using Convolutional Neural Network</h5>
+                            <p class="text-xs text-slate-400">Purakala Journal (Print-Only UGC CARE Archive), Vol. 31, Issue 25.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 9 -->
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=58626857500" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="true" data-type="journal" data-keywords="flight delay prediction xgboost machine learning jardcs 2019 scopus">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Scopus Indexed</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-emerald-300">
+                                    2019 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">Flight Delay Prediction Using Machine Learning Algorithm XGBoost</h5>
+                            <p class="text-xs text-slate-400">Journal of Advanced Research in Dynamical and Control Systems (JARDCS, USA), Vol. 11, No. 5.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 10 (Updated IJSR URL) -->
+                    <a href="https://www.ijsr.in/article-description.php?id=VDJNclM5eWlsWlQ1Mi9OUUd4VUlqdz09" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="conference" data-keywords="authentication openstack biometric icriet 2017 2018">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">Indian J. Sci. Res.</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    2018 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">Authentication of OpenStack Using Biometrics</h5>
+                            <p class="text-xs text-slate-400">ICRIET-2017, ASTHA Hyderabad. Indian J. Sci. Res., 17(2): 411–415.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 11 (Updated IJSR URL) -->
+                    <a href="https://www.ijsr.in/article-description.php?id=d1pDS3FySmlsSFhmQnZ2MHk5eXNoUT09" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="conference" data-keywords="packet dropping attacks wan icriet 2017 2018">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">Indian J. Sci. Res.</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    2018 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">Identifying Packet Dropping Attacks in WAN</h5>
+                            <p class="text-xs text-slate-400">ICRIET-2017, Aurora's Scientific Technology & Research Academy, 17(2): 411–415.</p>
+                        </div>
+                    </a>
+
+                    <!-- Paper 12 (ICRIET-2016 Conference Proceedings Record) -->
+                    <a href="https://www.aconf.org/conf_89115" target="_blank" rel="noopener noreferrer" class="paper-card glass-card glass-card-interactive p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 group" data-scopus="false" data-type="conference" data-keywords="synchronization algorithm dew computing icriet 2016">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">Conference Proceeding</span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5 group-hover:text-indigo-300">
+                                    2016 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </div>
+                            <h5 class="text-base font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">A Case Study on Synchronization Algorithm for Dew Computing</h5>
+                            <p class="text-xs text-slate-400">ICRIET-2016 Conference Proceedings (ISBN: 978-93-856181-6-1), Hyderabad.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ACADEMIC OUTREACH: CONFERENCES, FDPS & WORKSHOPS TABBED VIEW -->
+        <section id="activities" class="relative bg-slate-950/60 py-12 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Academic Outreach</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Conferences, FDPs & Workshops Organized & Attended</h3>
+                </div>
+
+                <!-- Tab Navigation Buttons -->
+                <div class="flex justify-center border-b border-slate-800 pb-3">
+                    <div class="flex p-1.5 bg-slate-900 rounded-2xl border border-slate-800 gap-2 max-w-full overflow-x-auto">
+                        <button onclick="switchTab('tab-fdp')" id="btn-tab-fdp" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-indigo-600 text-white shadow-md transition-all">
+                            <i class="fa-solid fa-chalkboard-user mr-1.5"></i> Faculty Development (11)
+                        </button>
+                        <button onclick="switchTab('tab-conf')" id="btn-tab-conf" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-all">
+                            <i class="fa-solid fa-users text-indigo-400 mr-1.5"></i> Conferences & Webinars (7)
+                        </button>
+                        <button onclick="switchTab('tab-workshops')" id="btn-tab-workshops" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-all">
+                            <i class="fa-solid fa-laptop text-emerald-400 mr-1.5"></i> Workshops & SDPs (8)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAB 1: FACULTY DEVELOPMENT PROGRAMS -->
+                <div id="tab-fdp" class="tab-content block space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="glass-card p-5 rounded-2xl border border-indigo-500/40 space-y-1">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[11px] font-bold text-indigo-400 uppercase">November 16–20, 2026</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Recently Organized</span>
+                            </div>
+                            <h5 class="text-base font-bold text-white">Deep Learning Essentials for Engineering Applications (Remote Center Coordinator)</h5>
+                            <p class="text-xs text-slate-400">1-Week Faculty Development Program sponsored by NITTTR Chandigarh, organized by the Department of IT, SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-emerald-400 uppercase">March 21–25, 2022</span>
+                            <h5 class="text-base font-bold text-white">Free Software and Resources for Technical Education through ICT</h5>
+                            <p class="text-xs text-slate-400">AICTE-recognized 1-Week Short Term Course jointly organized by NITTTR Chandigarh and SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-indigo-400 uppercase">Sep 28 – Oct 03, 2020</span>
+                            <h5 class="text-base font-bold text-white">Cyber Security (Organizing Member)</h5>
+                            <p class="text-xs text-slate-400">1-Week Online Faculty Development Program at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-cyan-400 uppercase">January 6–10, 2020</span>
+                            <h5 class="text-base font-bold text-white">Natural Language Processing (NLP)</h5>
+                            <p class="text-xs text-slate-400">Jointly organized by E&ICT NIT Patna, IIITDM, and MNIT Jaipur at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-purple-400 uppercase">July 15–20, 2019</span>
+                            <h5 class="text-base font-bold text-white">Image Processing, Pattern Recognition and Machine Learning</h5>
+                            <p class="text-xs text-slate-400">1-Week Faculty Development Program at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-indigo-400 uppercase">July 8–13, 2019</span>
+                            <h5 class="text-base font-bold text-white">AI and Deep Learning</h5>
+                            <p class="text-xs text-slate-400">1-Week Faculty Development Program organized at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-amber-400 uppercase">June 3–8, 2019</span>
+                            <h5 class="text-base font-bold text-white">Deep Learning</h5>
+                            <p class="text-xs text-slate-400">1-Week Faculty Development Program organized at NIT Arunachal Pradesh (NITAP).</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-emerald-400 uppercase">June 18–22, 2018</span>
+                            <h5 class="text-base font-bold text-white">Internet of Things (IoT)</h5>
+                            <p class="text-xs text-slate-400">1-Week Faculty Development Program at NIT Warangal (NITW).</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-purple-400 uppercase">Nov 8 – Dec 3, 2016</span>
+                            <h5 class="text-base font-bold text-white">SAP ABAP OOPS Concepts with Hands-On Experience</h5>
+                            <p class="text-xs text-slate-400">2-Week intensive Faculty Development Program at SNIST, Hyderabad.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase">October 20–22, 2016</span>
+                            <h5 class="text-base font-bold text-white">Grid and Cloud Computing</h5>
+                            <p class="text-xs text-slate-400">3-Day FDP at Sreevidyanikethan, Tirupati.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase">May 2–7, 2016</span>
+                            <h5 class="text-base font-bold text-white">Java and SQL</h5>
+                            <p class="text-xs text-slate-400">5-Day FDP organized at SNIST, Hyderabad.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB 2: CONFERENCES & WEBINARS -->
+                <div id="tab-conf" class="tab-content hidden space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="glass-card p-5 rounded-2xl border border-indigo-500/30 space-y-1">
+                            <span class="text-[11px] font-bold text-indigo-400 uppercase">Nov 16–20, 2026</span>
+                            <h5 class="text-base font-bold text-white">Remote Center Coordinator — NITTTR Chandigarh</h5>
+                            <p class="text-xs text-slate-400">FDP on "Deep Learning Essentials for Engineering Applications" organized by Department of IT, SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-emerald-400 uppercase">Dec 22–23, 2023</span>
+                            <h5 class="text-base font-bold text-white">Coordinator — 6th National Conference (AITC)</h5>
+                            <p class="text-xs text-slate-400">National Conference on Advances in Information Technology & Computing, Department of IT, SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-cyan-400 uppercase">May 6–7, 2021</span>
+                            <h5 class="text-base font-bold text-white">Coordinator — International Conference (ITCA)</h5>
+                            <p class="text-xs text-slate-400">Jointly organized by RSP Conference Hub Coimbatore & School of Computing, SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-purple-400 uppercase">Dec 22–23, 2020</span>
+                            <h5 class="text-base font-bold text-white">Coordinator — 4th National Conference (AITC)</h5>
+                            <p class="text-xs text-slate-400">Organized by Department of IT, SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-amber-400 uppercase">Dec 22–23, 2020</span>
+                            <h5 class="text-base font-bold text-white">International & National Webinars Organizer</h5>
+                            <p class="text-xs text-slate-400">Organized webinars on Recent Trends in Information Technology for SNIST students.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase">Oct 27–28, 2016</span>
+                            <h5 class="text-base font-bold text-white">Make in India National Conference</h5>
+                            <p class="text-xs text-slate-400">Organizing committee member for National Conference on IT and Business Excellence at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase">National Level</span>
+                            <h5 class="text-base font-bold text-white">Frontiers of CS & IT Conference</h5>
+                            <p class="text-xs text-slate-400">Attended 2-day National Conference organized by Department of CSE & IT, SNIST.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB 3: WORKSHOPS -->
+                <div id="tab-workshops" class="tab-content hidden space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-indigo-400 uppercase">Nov 2019</span>
+                            <h5 class="text-base font-bold text-white">Guest Lecture on Mobile iOS</h5>
+                            <p class="text-xs text-slate-400">Organized technical lecture for 3rd Year IT students (240 Students) at SNIST.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-emerald-400 uppercase">April 20–21, 2018</span>
+                            <h5 class="text-base font-bold text-white">IIT Bombay e-Yantra Robotics Workshop</h5>
+                            <p class="text-xs text-slate-400">Attended 2-day e-Yantra Lab Setup Initiative (eLSI) robotics workshop at Aurora Academy, Hyderabad.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-purple-400 uppercase">March 30–31, 2017</span>
+                            <h5 class="text-base font-bold text-white">Data Mining & Business Analytics Workshop</h5>
+                            <p class="text-xs text-slate-400">Attended at Indian Statistical Institute (ISI) SQC&OR Unit, Hyderabad.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-cyan-400 uppercase">June – Sep 2018</span>
+                            <h5 class="text-base font-bold text-white">SDP on Cloud Computing & Machine Learning</h5>
+                            <p class="text-xs text-slate-400">Organized Student Development Programs for SNIST engineering students.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-1">
+                            <span class="text-[11px] font-bold text-amber-400 uppercase">2016 – 2017 (TEQIP-II)</span>
+                            <h5 class="text-base font-bold text-white">SAP ABAP Workbench Fundamentals SDP</h5>
+                            <p class="text-xs text-slate-400">Organized hands-on Student Development Programs funded under TEQIP-II.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT & FOOTER -->
+        <section id="contact" class="relative pt-12 pb-16 bg-slate-950">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <!-- Contact Header & Cards -->
+                <div class="space-y-6">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Contact & Bio</h2>
+                        <h3 class="text-3xl font-extrabold text-white mt-1">Get In Touch</h3>
+                        <p class="text-sm text-slate-400 mt-2">Open to research collaborations, academic guest sessions, and student development mentoring.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        
+                        <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <span class="block text-xs text-slate-400">Primary Email</span>
+                                <a href="mailto:vignesh2friend@gmail.com" class="font-semibold text-white hover:text-indigo-400 truncate block">vignesh2friend@gmail.com</a>
+                            </div>
+                            <button onclick="copyToClipboard('vignesh2friend@gmail.com', 'Email copied!')" class="ml-auto text-slate-500 hover:text-white p-2" title="Copy Email">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400">Mobile Contact</span>
+                                <span class="font-semibold text-white">+91 8790270702 / 9966181460</span>
+                            </div>
+                            <button onclick="copyToClipboard('+918790270702', 'Mobile number copied!')" class="ml-auto text-slate-500 hover:text-white p-2" title="Copy Mobile Number">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <span class="block text-xs text-slate-400">GitHub Profile</span>
+                                <a href="https://github.com/KVigneswaraReddy" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-purple-400 truncate flex items-center gap-1.5">
+                                    <span>KVigneswaraReddy</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                                </a>
+                            </div>
+                            <button onclick="copyToClipboard('https://github.com/KVigneswaraReddy', 'GitHub URL copied!')" class="ml-auto text-slate-500 hover:text-white p-2" title="Copy GitHub URL">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Footer bottom credits -->
+                <div class="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                    <p>© 2026 Dr. Kanjula Vigneswara Reddy. All rights reserved.</p>
+                    <div class="flex items-center gap-3">
+                        <button onclick="window.print()" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-print"></i> Export CV
+                        </button>
+                        <span>•</span>
+                        <span>Hosted on <a href="https://github.com/KVigneswaraReddy" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline"><i class="fa-brands fa-github text-slate-400"></i> GitHub Pages</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Interactive Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Clipboard Copy Utility
+        function copyToClipboard(text, message = 'Copied to clipboard!') {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => showToast(message));
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast(message);
+                } catch (err) {
+                    console.error('Copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Tab Navigation Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+            }
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+                btn.classList.add('text-slate-400');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                activeBtn.classList.remove('text-slate-400');
+            }
+        }
+
+        // Research Papers Filtering & Live Search Engine
+        const searchInput = document.getElementById('paper-search');
+        const paperCards = document.querySelectorAll('.paper-card');
+        let currentPaperFilter = 'all';
+
+        function updateFilterCounts() {
+            let total = 0, scopus = 0, journal = 0, conference = 0;
+            paperCards.forEach(card => {
+                total++;
+                if (card.getAttribute('data-scopus') === 'true') scopus++;
+                if (card.getAttribute('data-type') === 'journal') journal++;
+                if (card.getAttribute('data-type') === 'conference') conference++;
+            });
+
+            if (document.getElementById('count-all')) document.getElementById('count-all').textContent = total;
+            if (document.getElementById('count-scopus')) document.getElementById('count-scopus').textContent = scopus;
+            if (document.getElementById('count-journal')) document.getElementById('count-journal').textContent = journal;
+            if (document.getElementById('count-conference')) document.getElementById('count-conference').textContent = conference;
+        }
+
+        function filterPapers(type) {
+            currentPaperFilter = type;
+
+            document.querySelectorAll('.paper-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-slate-900', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById('filter-' + type);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                activeBtn.classList.remove('bg-slate-900', 'text-slate-300');
+            }
+
+            applyPaperFilters();
+        }
+
+        function applyPaperFilters() {
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+            paperCards.forEach(card => {
+                const isScopus = card.getAttribute('data-scopus') === 'true';
+                const paperType = card.getAttribute('data-type');
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const cardText = card.textContent.toLowerCase();
+
+                let matchesFilter = true;
+                if (currentPaperFilter === 'scopus' && !isScopus) matchesFilter = false;
+                if (currentPaperFilter === 'journal' && paperType !== 'journal') matchesFilter = false;
+                if (currentPaperFilter === 'conference' && paperType !== 'conference') matchesFilter = false;
+
+                let matchesSearch = true;
+                if (query !== '' && !cardText.includes(query) && !keywords.includes(query)) {
+                    matchesSearch = false;
+                }
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyPaperFilters);
+        }
+
+        // Initialize counts on load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateFilterCounts();
+        });
+    </script>
+</body>
+</html>
